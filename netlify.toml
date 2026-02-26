@@ -1,0 +1,4 @@
+# netlify.toml (commit to repo root)
+[build]
+  publish = "build"
+  command = "npm run build"
