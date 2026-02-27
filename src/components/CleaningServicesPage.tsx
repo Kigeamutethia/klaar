@@ -43,7 +43,7 @@ export default function CleaningServicesPage() {
       icon: Wind,
       title: 'Carpet & Window Cleaning',
       description: 'Specialized carpet steam cleaning, upholstery care, and professional window cleaning for residential and commercial properties.',
-      image: 'https://images.unsplash.com/photo-1622814859704-c6cd5ae75dd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMG1vZGVybiUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NzA1NjI4NTR8MA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: 'https://res.cloudinary.com/dcnq9tnzv/image/upload/v1772182260/Titossy-Carpet-Cleaning-Companies-In-Nairobi-08_ojowuh.jpg'
     },
     {
       icon: Bug,
