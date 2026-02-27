@@ -136,7 +136,7 @@ export default function Footer() {
               <li className="flex items-start space-x-2">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
                 <a href="mailto:klaarsolutions@outlook.com" className="text-blue-100 hover:text-white transition-colors">
-                  klaarsolutions@outlook.com
+                  info@klaarsolutions@co.ke
                 </a>
               </li>
             </ul>
