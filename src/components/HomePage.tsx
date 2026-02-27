@@ -44,21 +44,31 @@ export default function HomePage() {
     }
   }, []);
 
-  // ✅ UPDATED: Mailto submit handler (no backend required) - uses your existing IDs
+  // ✅ REPLACED: handleSubmit with the more reliable version you provided
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
 
-    const name = (form.querySelector("#name") as HTMLInputElement).value;
-    const email = (form.querySelector("#email") as HTMLInputElement).value;
-    const phone = (form.querySelector("#phone") as HTMLInputElement).value;
-    const service = (form.querySelector("#service") as HTMLSelectElement).value;
-    const message = (form.querySelector("#message") as HTMLTextAreaElement).value;
+    const nameEl = form.querySelector("#name") as HTMLInputElement | null;
+    const emailEl = form.querySelector("#email") as HTMLInputElement | null;
+    const phoneEl = form.querySelector("#phone") as HTMLInputElement | null;
+    const serviceEl = form.querySelector("#service") as HTMLSelectElement | null;
+    const messageEl = form.querySelector("#message") as HTMLTextAreaElement | null;
+
+    if (!nameEl || !emailEl || !phoneEl || !serviceEl || !messageEl) {
+      alert("Form fields not found. Please refresh and try again.");
+      return;
+    }
+
+    const name = nameEl.value;
+    const email = emailEl.value;
+    const phone = phoneEl.value;
+    const service = serviceEl.value;
+    const message = messageEl.value;
 
     const to = "info@klaarsolutions.co.ke";
     const subject = encodeURIComponent(`Klaar Solutions Inquiry - ${service}`);
-
     const body = encodeURIComponent(
 `Full Name: ${name}
 Email Address: ${email}
@@ -71,16 +81,11 @@ ${message}`
 
     const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
 
-    // Create a temporary link and click it (more reliable across browsers)
-    const link = document.createElement('a');
-    link.href = mailtoLink;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // ✅ Most reliable
+    window.location.href = mailtoLink;
 
-    // Optional: Reset form after submission
-    form.reset();
+    // optional reset (some browsers won't run this after mailto opens)
+    // form.reset();
   };
 
   const services = [
