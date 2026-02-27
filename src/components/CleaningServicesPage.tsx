@@ -37,7 +37,7 @@ export default function CleaningServicesPage() {
       icon: Droplets,
       title: 'Deep Cleaning & Sanitation',
       description: 'Intensive cleaning and disinfection services for homes, offices, and facilities requiring specialized sanitation protocols.',
-      image: 'https://images.unsplash.com/photo-1765111387588-7583e56bc2fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwY2xlYW5pbmclMjBzZXJ2aWNlfGVufDF8fHx8MTc3MDU2Mjg1MXww&ixlib=rb-4.1.0&q=80&w=1080'
+      image: 'https://res.cloudinary.com/dcnq9tnzv/image/upload/v1772182959/ChatGPT_Image_Feb_27_2026_12_01_29_PM_zpr1fw.png'
     },
     {
       icon: Wind,
@@ -49,7 +49,7 @@ export default function CleaningServicesPage() {
       icon: Bug,
       title: 'Fumigation Services',
       description: 'Professional pest control and fumigation services using safe, approved chemicals to eliminate pests and maintain hygiene.',
-      image: 'https://images.unsplash.com/photo-1593854519602-687eae339d57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWZldHklMjBlcXVpcG1lbnQlMjBQUEUlMjB3b3JrZXJ8ZW58MXx8fHwxNzcwNTYyODUzfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: 'https://res.cloudinary.com/dcnq9tnzv/image/upload/v1772183145/ChatGPT_Image_Feb_27_2026_12_05_29_PM_dtj9ai.png'
     }
   ];
 
