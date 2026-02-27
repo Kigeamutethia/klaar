@@ -1,4 +1,11 @@
-# netlify.toml (commit to repo root)
+# netlify.toml
+
 [build]
   publish = "build"
   command = "npm run build"
+
+# ADD THIS PART BELOW
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
