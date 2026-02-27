@@ -44,30 +44,33 @@ export default function HomePage() {
     }
   }, []);
 
+  // ✅ UPDATED: Mailto submit handler (no backend required) - uses your existing IDs
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const form = e.currentTarget;
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
-    const service = (form.elements.namedItem('service') as HTMLSelectElement).value;
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
 
-    // Create mailto link with form data
-    const subject = `Service Inquiry from ${name}`;
-    const body = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service Requested: ${service}
+    const form = e.currentTarget;
+
+    const name = (form.querySelector("#name") as HTMLInputElement).value;
+    const email = (form.querySelector("#email") as HTMLInputElement).value;
+    const phone = (form.querySelector("#phone") as HTMLInputElement).value;
+    const service = (form.querySelector("#service") as HTMLSelectElement).value;
+    const message = (form.querySelector("#message") as HTMLTextAreaElement).value;
+
+    const to = "info@klaarsolutions.co.ke";
+    const subject = encodeURIComponent(`Klaar Solutions Inquiry - ${service}`);
+
+    const body = encodeURIComponent(
+`Full Name: ${name}
+Email Address: ${email}
+Phone Number: ${phone}
+Service Required: ${service}
 
 Message:
-${message}
-    `.trim();
+${message}`
+    );
 
-    const mailtoLink = `mailto:klaarsolutions@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+    const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
+
     // Create a temporary link and click it (more reliable across browsers)
     const link = document.createElement('a');
     link.href = mailtoLink;
@@ -75,7 +78,7 @@ ${message}
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     // Optional: Reset form after submission
     form.reset();
   };
