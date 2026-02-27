@@ -478,7 +478,7 @@ ${message}
                 </div>
                 <div className="flex items-center space-x-3 text-gray-700">
                   <Mail className="w-5 h-5 text-[#1f4165]" />
-                  <span>klaarsolutions@outlook.com</span>
+                  <span>info@klaarsolutions.co.ke</span>
                 </div>
               </div>
             </motion.div>
